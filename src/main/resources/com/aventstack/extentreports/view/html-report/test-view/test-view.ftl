@@ -128,10 +128,7 @@
 	<!-- subview left -->
 
 	<div class='subview-right left'>
-			<script>
-				    load();
-			</script>
-			<div id='show'></div>
+			<#include 'pangea-report.ftl'>
 			<h5 class='test-name'></h5>
 
 			<div id='step-filters' class="right">

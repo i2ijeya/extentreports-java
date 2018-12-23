@@ -88,7 +88,7 @@ var report={
   "totalFailed": 0
 }
 ;
-
+function load() {
 
 
 // create table;
@@ -147,7 +147,7 @@ var show =document.getElementById('show');
 
 show.innerHTML="";
 show.appendChild(table);
-
+}
 
 function showProvider(event) {
   var headerRow =[];
