@@ -1,5 +1,5 @@
-<div id='test-view' class='view'>
-	Passcount - ${report.getReport().getTotalPassed()}
+<div id='pangea-report' class='view'>
+				This is pangea report
 	<section id='controls'>
 		<div class='controls grey lighten-4'>
 			<!-- test toggle -->
@@ -92,7 +92,6 @@
 			<ul id='test-collection' class='test-collection'>
 				<#list report.testList as test>
 				
-				
 				<#assign isBdd = (test.hasChildren() && test.nodeContext.get(0).isBehaviorDrivenType())>
 
 				<#assign hasChildrenClass = ''>
@@ -128,10 +127,7 @@
 	<!-- subview left -->
 
 	<div class='subview-right left'>
-			<script>
-				    load();
-			</script>
-			<div id='show'></div>
+		<div class='view-summary'>
 			<h5 class='test-name'></h5>
 
 			<div id='step-filters' class="right">

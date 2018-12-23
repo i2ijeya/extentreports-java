@@ -18,6 +18,7 @@ import com.aventstack.extentreports.configuration.Config;
 import com.aventstack.extentreports.configuration.ConfigMap;
 import com.aventstack.extentreports.model.ScreenCapture;
 import com.aventstack.extentreports.model.Test;
+import com.aventstack.extentreports.pangea.model.Report;
 import com.aventstack.extentreports.reporter.configuration.ExtentHtmlReporterConfiguration;
 import com.aventstack.extentreports.reporter.converters.ExtentHtmlReporterConverter;
 import com.aventstack.extentreports.utils.Writer;
@@ -49,6 +50,8 @@ public class ExtentHtmlReporter extends BasicFileReporter implements ReportAppen
     
     private List<Test> parsedTestCollection;
     private ExtentHtmlReporterConfiguration userConfig;
+    private Report pangeaReport;
+    
     
     ExtentHtmlReporter() {
         // Required to parse the start and end times in the HTML report.
@@ -70,6 +73,7 @@ public class ExtentHtmlReporter extends BasicFileReporter implements ReportAppen
     private void loadDefaultConfig() {
         configContext = new ConfigMap();
         userConfig = new ExtentHtmlReporterConfiguration();
+        
         
         ClassLoader loader = getClass().getClassLoader();
         InputStream is = loader.getResourceAsStream(DEFAULT_CONFIG_FILE);
@@ -224,6 +228,13 @@ public class ExtentHtmlReporter extends BasicFileReporter implements ReportAppen
         mins = mins % 60;
         
         return hours + "h " + mins + "m " + secs + "s+" + ms + "ms";  
+    }
+    
+    
+    
+    public com.aventstack.extentreports.pangea.model.Report getReport() {
+    	System.out.println("Getting pangea Report -- " + getPangeaReport());
+    	return getPangeaReport();
     }
     
 }

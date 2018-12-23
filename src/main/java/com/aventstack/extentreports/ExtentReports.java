@@ -370,4 +370,9 @@ public class ExtentReports extends Report {
         GherkinDialectProvider.setLanguage(language);
     }
     
+    
+    
+    public com.aventstack.extentreports.pangea.model.Report getPangeaReport() {
+    	return getPangeaReport();
+    }
 }

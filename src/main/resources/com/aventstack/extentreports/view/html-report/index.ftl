@@ -41,7 +41,6 @@
 <html>
 
 	<#include 'head.ftl'>
-
 	<body class='extent ${ theme } default hide-overflow ${ bddClass }'>
 		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
 			<span><i class='material-icons'>desktop_windows</i></span>
@@ -53,10 +52,12 @@
 		<div class='container'>
 
 			<#include 'test-view/test-view.ftl'>
+			<#include 'test-view/pangea-report.ftl'>
 			<#include 'category-view/category-view.ftl'>
 			<#include 'author-view/author-view.ftl'>
 			<#include 'exception-view/exception-view.ftl'>			
 			<#include 'dashboard-view/dashboard-view.ftl'>
+			<#include 'logs-view/testrunner-logs-view.ftl'>
 			<#include 'logs-view/testrunner-logs-view.ftl'>
 
 		</div>
@@ -93,11 +94,12 @@
 		</script>
 		
 		<#assign cdn = config.getValue('cdn')>
-		<#if cdn == 'extentreports'>
+	<!--	<#if cdn == 'extentreports'> -->
 			<script src='http://extentreports.com/resx/dist/js/extent.js' type='text/javascript'></script>
-		<#else>
+			<script src='http://extentreports.com/resx/dist/js/parsejson.js' type='text/javascript'></script>
+<!--		<#else>
 			<script src='${ config.getValue('protocol') }://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
-		</#if>
+		</#if> -->
 		
 		<#assign hideChart=(chartVisibleOnOpen=='true')?then(false, true)>
 		<#if hideChart>
