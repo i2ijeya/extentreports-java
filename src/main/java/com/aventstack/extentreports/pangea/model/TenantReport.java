@@ -12,7 +12,7 @@ public class TenantReport {
 	
 	@SerializedName("providers")
 	List<ProviderReport> providerReportList = new ArrayList<ProviderReport>();
-	
+	String selected = "Yes"; // Yes, No
 	String tenantName;
 	int passCount;
 	int failCount;
@@ -71,6 +71,16 @@ public class TenantReport {
 	public void setOverallStatus(String overallStatus) {
 		this.overallStatus = overallStatus;
 	}
-	
 
+	public String getSelected() {
+		return selected;
+	}
+
+	public void setSelected(String selected) {
+		this.selected = selected;
+	}
+
+
+	
+	
 }

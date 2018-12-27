@@ -50,6 +50,4 @@ public class Report {
 		this.totalFailed = totalFailed;
 	}
 	
-	
-	
 }

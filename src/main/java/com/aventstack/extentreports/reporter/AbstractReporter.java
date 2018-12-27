@@ -53,6 +53,7 @@ public abstract class AbstractReporter implements ExtentReporter {
     protected SystemAttributeContext systemAttributeContext;
     protected SessionStatusStats sc;
     protected Report pangeaReport;
+    protected String reportJson;
     
     public AbstractReporter() {
         setStartTime(Calendar.getInstance().getTime());
@@ -195,6 +196,14 @@ public abstract class AbstractReporter implements ExtentReporter {
 
 	public void setPangeaReport(Report pangeaReport) {
 		this.pangeaReport = pangeaReport;
+	}
+
+	public String getReportJson() {
+		return reportJson;
+	}
+
+	public void setReportJson(String reportJson) {
+		this.reportJson = reportJson;
 	}
     
 

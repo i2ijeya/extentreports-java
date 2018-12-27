@@ -51,7 +51,7 @@ public class ExtentHtmlReporter extends BasicFileReporter implements ReportAppen
     private List<Test> parsedTestCollection;
     private ExtentHtmlReporterConfiguration userConfig;
     private Report pangeaReport;
-    
+    private String reportJson;
     
     ExtentHtmlReporter() {
         // Required to parse the start and end times in the HTML report.
@@ -233,8 +233,11 @@ public class ExtentHtmlReporter extends BasicFileReporter implements ReportAppen
     
     
     public com.aventstack.extentreports.pangea.model.Report getReport() {
-    	System.out.println("Getting pangea Report -- " + getPangeaReport());
     	return getPangeaReport();
+    }
+    
+    public String getJson() {
+    	return getReportJson();
     }
     
 }
