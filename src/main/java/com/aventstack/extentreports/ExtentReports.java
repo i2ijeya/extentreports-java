@@ -372,7 +372,7 @@ public class ExtentReports extends Report {
     
     
     
-    public com.aventstack.extentreports.pangea.model.Report getPangeaReport() {
+    public com.aventstack.extentreports.pangea.model.PangeaReport getPangeaReport() {
     	return getPangeaReport();
     }
 }

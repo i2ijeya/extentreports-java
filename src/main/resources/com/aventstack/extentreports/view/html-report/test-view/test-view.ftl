@@ -60,12 +60,14 @@
 			<div id='toggle-test-view-charts' class='chip transparent'>
 				<#assign btnEnabledClass=(chartVisibleOnOpen=='true')?then('pink-text','')>
 				<a class='${ btnEnabledClass }' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
-					<i class='material-icons'>track_changes</i> Dashboard-test
+					<i class='material-icons'>track_changes</i> Dashboard
 				</a>
 			</div>
 			<!-- enable dashboard -->
 
-			<!-- search -->
+			<!-- search --> 
+			<!-- 
+			
 			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
 				<a href="#" class='search-div'>
 					<i class='material-icons'>search</i> Search
@@ -75,55 +77,13 @@
 					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
 				</div>
 				
-			</div>
+			</div> 
+			Commented out for Pangea	
+			-->
 			<!-- search -->
 		</div>
 	</section>
 
-	<#if testViewChartLocation=='top'>
-		<#include 'test-view-charts.ftl'>
-	</#if>
-
-	<div class='subview-left left'>
-		
-		<div class='view-summary'>
-			<h5>${ parentViewChartsHeading }</h5>
-			<ul id='test-collection' class='test-collection'>
-				<#list report.testList as test>
-				
-				
-				<#assign isBdd = (test.hasChildren() && test.nodeContext.get(0).isBehaviorDrivenType())>
-
-				<#assign hasChildrenClass = ''>
-				<#if test.nodeContext?? && test.nodeContext.all?size != 0>
-					<#assign hasChildrenClass = 'has-leaf'>
-				</#if>
-				
-				<li class='test displayed active ${ hasChildrenClass } ${ test.status }' status='${ test.status }' bdd='${ isBdd?string }' test-id='${ test.getID() }'>
-					<div class='test-heading'>
-						<span class='test-name'>${ test.name }</span>
-						<span class='test-time'>${ test.startTime?datetime?string["${timeStampFormat}"] }</span>
-						<span class='test-status right ${ test.status }'>${ test.status }</span>
-					</div>
-					<div class='test-content hide'>
-						<#if isBdd>
-							<#include 'bdd.ftl'>							
-						<#else>
-							<#include 'standard.ftl'>
-						</#if>
-						<#if test.screenCaptureList?? && test.screenCaptureList?size != 0>
-							<ul class='screenshots'>
-								<#list test.screenCaptureList as sc>
-								<li>${ sc.source }</li>
-								</#list>
-							</ul>
-						</#if>
-					</div>
-				</li>
-				</#list>
-			</ul>
-		</div>
-	</div>
 	<!-- subview left -->
 
 	<div class='subview-right left'>

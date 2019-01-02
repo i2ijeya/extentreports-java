@@ -26,6 +26,7 @@ import com.aventstack.extentreports.configuration.ConfigMap;
 import com.aventstack.extentreports.model.Author;
 import com.aventstack.extentreports.model.Category;
 import com.aventstack.extentreports.model.Test;
+import com.aventstack.extentreports.pangea.model.PangeaReport;
 import com.aventstack.extentreports.pangea.model.Report;
 
 public abstract class AbstractReporter implements ExtentReporter {
@@ -52,7 +53,7 @@ public abstract class AbstractReporter implements ExtentReporter {
     protected TestAttributeTestContextProvider<Author> authorContext;
     protected SystemAttributeContext systemAttributeContext;
     protected SessionStatusStats sc;
-    protected Report pangeaReport;
+    protected PangeaReport pangeaReport;
     protected String reportJson;
     
     public AbstractReporter() {
@@ -190,11 +191,11 @@ public abstract class AbstractReporter implements ExtentReporter {
       return strategy;
     }
 
-	public Report getPangeaReport() {
+	public PangeaReport getPangeaReport() {
 		return pangeaReport;
 	}
 
-	public void setPangeaReport(Report pangeaReport) {
+	public void setPangeaReport(PangeaReport pangeaReport) {
 		this.pangeaReport = pangeaReport;
 	}
 

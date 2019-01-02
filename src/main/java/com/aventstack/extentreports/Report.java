@@ -24,7 +24,7 @@ abstract class Report implements IReport {
     
     private Date reportStartDate;
     private Date reportEndDate;
-    private com.aventstack.extentreports.pangea.model.Report pangeaReport;
+    private com.aventstack.extentreports.pangea.model.PangeaReport pangeaReport;
     
     private Status reportStatus = Status.PASS;
     
@@ -44,15 +44,15 @@ abstract class Report implements IReport {
         categoryContext = new TestAttributeTestContextProvider<>();
         authorContext = new TestAttributeTestContextProvider<>();
         exceptionContextBuilder = new ExceptionTestContextImpl();
-        pangeaReport = com.aventstack.extentreports.pangea.model.Report.getInstance();
+        pangeaReport = com.aventstack.extentreports.pangea.model.PangeaReport.getInstance();
         reportStartDate = Calendar.getInstance().getTime();
     }
     
-    public com.aventstack.extentreports.pangea.model.Report getPangeaReport() {
+    public com.aventstack.extentreports.pangea.model.PangeaReport getPangeaReport() {
 		return pangeaReport;
 	}
 
-	public void setPangeaReport(com.aventstack.extentreports.pangea.model.Report pangeaReport) {
+	public void setPangeaReport(com.aventstack.extentreports.pangea.model.PangeaReport pangeaReport) {
 		this.pangeaReport = pangeaReport;
 	}
 
