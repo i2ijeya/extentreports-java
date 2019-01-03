@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PangeaTestCaseDetails {
+	
 	private List<ApiDetails> apiDetails = new ArrayList<ApiDetails>();
 	private String severity;
 	private String actualResultReason;

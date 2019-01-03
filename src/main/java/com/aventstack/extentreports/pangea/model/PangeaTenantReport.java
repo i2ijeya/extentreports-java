@@ -2,6 +2,7 @@ package com.aventstack.extentreports.pangea.model;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentMap;
@@ -17,6 +18,16 @@ public class PangeaTenantReport {
 	private int totalCount;
 	private String overallStatus;
 	
+	
+	 public static Comparator<PangeaTenantReport> tenantReportComparator = new Comparator<PangeaTenantReport>() {
+
+			@Override
+			public int compare(PangeaTenantReport o1, PangeaTenantReport o2) {
+				// TODO Auto-generated method stub
+				String status1 = o1.getOverallStatus();
+				String status2 = o2.getOverallStatus();
+				return status1.compareTo(status2);
+			}};
 	
 	public boolean equals(Object e) {
 		if(e instanceof PangeaTenantReport) {

@@ -1,17 +1,16 @@
 package com.aventstack.extentreports.pangea.model;
 
-import java.util.Date;
-
 public class BaseReport {
 	private String projectName;
 	private String jobId;
 	private String environment;
-	private String successCount;
-	private String failCount;
-	private String skippedCount;
-	private Date testStartTime;
-	private Date testEndTime;
+	private int successCount;
+	private int failCount;
+	private int skippedCount;
+	private String testStartTime;
+	private String testEndTime;
 	private String overallStatus;
+	private int totalTestCases;
 	private PangeaReport report;
 	
 	private static BaseReport baseReport = null; 
@@ -31,44 +30,28 @@ public class BaseReport {
 		this.environment = environment;
 	}
 
-	public String getSuccessCount() {
+	public int getSuccessCount() {
 		return successCount;
 	}
 
-	public void setSuccessCount(String successCount) {
+	public void setSuccessCount(int successCount) {
 		this.successCount = successCount;
 	}
 
-	public String getFailCount() {
+	public int getFailCount() {
 		return failCount;
 	}
 
-	public void setFailCount(String failCount) {
+	public void setFailCount(int failCount) {
 		this.failCount = failCount;
 	}
 
-	public String getSkippedCount() {
+	public int getSkippedCount() {
 		return skippedCount;
 	}
 
-	public void setSkippedCount(String skippedCount) {
+	public void setSkippedCount(int skippedCount) {
 		this.skippedCount = skippedCount;
-	}
-
-	public Date getTestStartTime() {
-		return testStartTime;
-	}
-
-	public void setTestStartTime(Date testStartTime) {
-		this.testStartTime = testStartTime;
-	}
-
-	public Date getTestEndTime() {
-		return testEndTime;
-	}
-
-	public void setTestEndTime(Date testEndTime) {
-		this.testEndTime = testEndTime;
 	}
 
 	public String getOverallStatus() {
@@ -101,6 +84,30 @@ public class BaseReport {
 
 	public void setReport(PangeaReport report) {
 		this.report = report;
+	}
+
+	public String getTestStartTime() {
+		return testStartTime;
+	}
+
+	public void setTestStartTime(String testStartTime) {
+		this.testStartTime = testStartTime;
+	}
+
+	public String getTestEndTime() {
+		return testEndTime;
+	}
+
+	public void setTestEndTime(String testEndTime) {
+		this.testEndTime = testEndTime;
+	}
+
+	public int getTotalTestCases() {
+		return totalTestCases;
+	}
+
+	public void setTotalTestCases(int totalTestCases) {
+		this.totalTestCases = totalTestCases;
 	}
 
 }

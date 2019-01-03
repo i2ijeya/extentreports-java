@@ -2,6 +2,7 @@ package com.aventstack.extentreports.pangea.model;
 
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentMap;
@@ -10,13 +11,24 @@ import com.google.gson.annotations.SerializedName;
 
 public class PangeaPaymentMethodReport {
 	
-	@SerializedName("apis")
+	@SerializedName("testCases")
 	private List<PangeaTestCaseReport> testCaseReport = new ArrayList<PangeaTestCaseReport>();
 	private String pmidName;
 	private int passCount;
 	private int failCount;
 	private int totalCount;
 	private String overallStatus;
+	
+	public static Comparator<PangeaPaymentMethodReport> paymentMethodReportComparator = new Comparator<PangeaPaymentMethodReport>() {
+
+		@Override
+		public int compare(PangeaPaymentMethodReport o1, PangeaPaymentMethodReport o2) {
+			// TODO Auto-generated method stub
+			String status1 = o1.getOverallStatus();
+			String status2 = o2.getOverallStatus();
+			return status1.compareTo(status2);
+		}};
+	
 	
 	public boolean equals(Object e) {
 		if(e instanceof PangeaPaymentMethodReport) {

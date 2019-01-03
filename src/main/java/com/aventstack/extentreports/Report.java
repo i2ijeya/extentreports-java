@@ -15,6 +15,7 @@ import com.aventstack.extentreports.model.ScreenCapture;
 import com.aventstack.extentreports.model.Screencast;
 import com.aventstack.extentreports.model.SystemAttribute;
 import com.aventstack.extentreports.model.Test;
+import com.aventstack.extentreports.pangea.model.BaseReport;
 import com.aventstack.extentreports.reporter.BasicFileReporter;
 
 abstract class Report implements IReport {
@@ -24,7 +25,7 @@ abstract class Report implements IReport {
     
     private Date reportStartDate;
     private Date reportEndDate;
-    private com.aventstack.extentreports.pangea.model.PangeaReport pangeaReport;
+    private BaseReport pangeaReport;
     
     private Status reportStatus = Status.PASS;
     
@@ -44,15 +45,15 @@ abstract class Report implements IReport {
         categoryContext = new TestAttributeTestContextProvider<>();
         authorContext = new TestAttributeTestContextProvider<>();
         exceptionContextBuilder = new ExceptionTestContextImpl();
-        pangeaReport = com.aventstack.extentreports.pangea.model.PangeaReport.getInstance();
+        pangeaReport = BaseReport.getInstance();
         reportStartDate = Calendar.getInstance().getTime();
     }
     
-    public com.aventstack.extentreports.pangea.model.PangeaReport getPangeaReport() {
+    public BaseReport getPangeaReport() {
 		return pangeaReport;
 	}
 
-	public void setPangeaReport(com.aventstack.extentreports.pangea.model.PangeaReport pangeaReport) {
+	public void setPangeaReport(BaseReport pangeaReport) {
 		this.pangeaReport = pangeaReport;
 	}
 

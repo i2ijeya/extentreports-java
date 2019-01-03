@@ -3,6 +3,7 @@ package com.aventstack.extentreports.pangea.model;
 
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentMap;
@@ -20,7 +21,19 @@ public class PangeaProviderReport {
 	private int skippedCount;
 	private int totalCount;
 	private String overallStatus;
+	private String testStartDateTime;
+	private String testEndDateTime;
 	
+	
+	public static Comparator<PangeaProviderReport> providerReportComparator = new Comparator<PangeaProviderReport>() {
+
+		@Override
+		public int compare(PangeaProviderReport o1, PangeaProviderReport o2) {
+			// TODO Auto-generated method stub
+			String status1 = o1.getOverallStatus();
+			String status2 = o2.getOverallStatus();
+			return status1.compareTo(status2);
+		}};
 	
 	public boolean equals(Object e) {
 		if(e instanceof PangeaProviderReport) {
@@ -80,6 +93,22 @@ public class PangeaProviderReport {
 
 	public void setTotalCount(int totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getTestStartDateTime() {
+		return testStartDateTime;
+	}
+
+	public void setTestStartDateTime(String testStartDateTime) {
+		this.testStartDateTime = testStartDateTime;
+	}
+
+	public String getTestEndDateTime() {
+		return testEndDateTime;
+	}
+
+	public void setTestEndDateTime(String testEndDateTime) {
+		this.testEndDateTime = testEndDateTime;
 	}
 	
 }

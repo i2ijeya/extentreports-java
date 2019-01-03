@@ -7,6 +7,8 @@ public class ApiDetails {
 	private String expectedResultReason;
 	private String actualResultReason;
 	private String status;
+	private String testStartDateTime;
+	private String testEndDateTime;
 	
 	public String getApiName() {
 		return apiName;
@@ -43,6 +45,18 @@ public class ApiDetails {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getTestStartDateTime() {
+		return testStartDateTime;
+	}
+	public void setTestStartDateTime(String testStartDateTime) {
+		this.testStartDateTime = testStartDateTime;
+	}
+	public String getTestEndDateTime() {
+		return testEndDateTime;
+	}
+	public void setTestEndDateTime(String testEndDateTime) {
+		this.testEndDateTime = testEndDateTime;
 	}
 	
 }

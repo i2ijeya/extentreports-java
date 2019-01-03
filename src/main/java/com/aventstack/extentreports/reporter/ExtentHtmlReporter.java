@@ -18,7 +18,7 @@ import com.aventstack.extentreports.configuration.Config;
 import com.aventstack.extentreports.configuration.ConfigMap;
 import com.aventstack.extentreports.model.ScreenCapture;
 import com.aventstack.extentreports.model.Test;
-import com.aventstack.extentreports.pangea.model.Report;
+import com.aventstack.extentreports.pangea.model.BaseReport;
 import com.aventstack.extentreports.reporter.configuration.ExtentHtmlReporterConfiguration;
 import com.aventstack.extentreports.reporter.converters.ExtentHtmlReporterConverter;
 import com.aventstack.extentreports.utils.Writer;
@@ -50,7 +50,7 @@ public class ExtentHtmlReporter extends BasicFileReporter implements ReportAppen
     
     private List<Test> parsedTestCollection;
     private ExtentHtmlReporterConfiguration userConfig;
-    private Report pangeaReport;
+    private BaseReport pangeaReport;
     private String reportJson;
     
     ExtentHtmlReporter() {
@@ -232,7 +232,7 @@ public class ExtentHtmlReporter extends BasicFileReporter implements ReportAppen
     
     
     
-    public com.aventstack.extentreports.pangea.model.Report getReport() {
+    public BaseReport getReport() {
     	return getPangeaReport();
     }
     

@@ -87,7 +87,7 @@
 	<!-- subview left -->
 
 	<div class='subview-right left'>
-			<#include 'pangea-report_dynamic.ftl'>
+			<#include 'pangea-report.ftl'>
 			<h5 class='test-name'></h5>
 
 			<div id='step-filters' class="right">
