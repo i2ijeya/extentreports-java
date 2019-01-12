@@ -7,6 +7,7 @@ import java.util.List;
 import com.aventstack.extentreports.gherkin.GherkinDialectProvider;
 import com.aventstack.extentreports.gherkin.model.IGherkinFormatterModel;
 import com.aventstack.extentreports.model.SystemAttribute;
+import com.aventstack.extentreports.pangea.model.BaseReport;
 
 /**
  * <p>
@@ -372,7 +373,7 @@ public class ExtentReports extends Report {
     
     
     
-    public com.aventstack.extentreports.pangea.model.PangeaReport getPangeaReport() {
+    public BaseReport getPangeaReport() {
     	return getPangeaReport();
     }
 }

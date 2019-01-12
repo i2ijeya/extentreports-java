@@ -1,6 +1,6 @@
   <!-- Modal content -->
 
-<div id="myModal" class="modal">
+<div id="myModal" class="modal" data-modal-overflow="true">
 
   <!-- Modal content -->
   <div id="modalContent" class="modal-content">
